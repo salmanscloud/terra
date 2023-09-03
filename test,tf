@@ -1,0 +1,18 @@
+provider "aws" {
+    region      = "ap-south-1"
+}
+
+# to interact with aws resources
+terraform {
+    required_providers {
+      aws = {
+        source  = "hashicorp/aws"
+        version = "~> 4.30"
+      }
+    }
+}
+
+# create s3 bucket named terra-bucket
+resource "aws_s3_bucket" "demos3" {
+    bucket = "terra-bucket"   
+}
